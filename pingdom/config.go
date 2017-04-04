@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/russellcardullo/go-pingdom/pingdom"
+	"github.com/jbrandstetter/go-pingdom/pingdom"
 )
 
 type Config struct {
@@ -35,7 +35,6 @@ func (c *Config) Client() (*pingdom.Client, error) {
 	if c.AccountEmail != "" {
 		client = pingdom.NewMultiUserClient(c.User, c.Password, c.APIKey, c.AccountEmail)
 	}
-
 
 	log.Printf("[INFO] Pingdom Client configured for user: %s", c.User)
 

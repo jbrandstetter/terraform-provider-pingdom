@@ -7,7 +7,7 @@ import (
 	"github.com/hashicorp/terraform/config"
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/terraform"
-	"github.com/russellcardullo/go-pingdom/pingdom"
+	"github.com/jbrandstetter/go-pingdom/pingdom"
 )
 
 var testAccProviders map[string]terraform.ResourceProvider
@@ -57,10 +57,10 @@ func TestProviderConfigure(t *testing.T) {
 	}
 
 	raw := map[string]interface{}{
-		"user":     expectedUser,
-		"password": expectedPassword,
-		"api_key":  expectedKey,
-		"account_email":  expectedAccountEmail,
+		"user":          expectedUser,
+		"password":      expectedPassword,
+		"api_key":       expectedKey,
+		"account_email": expectedAccountEmail,
 	}
 
 	rawConfig, err := config.NewRawConfig(raw)
